@@ -1,0 +1,274 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Auto Typer</title>
+
+  <!-- Connects your CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+  <!-- Header -->
+  <header>
+
+    <h1>⌨️ Auto Typer</h1>
+
+    <p>
+      Fast and easy typing practice
+    </p>
+
+  </header>
+
+
+  <main class="container">
+
+
+    <!-- ========================= -->
+    <!-- TEXT INPUT -->
+    <!-- ========================= -->
+
+    <section class="card">
+
+      <h2>📝 Your Text</h2>
+
+      <p>
+        Enter or paste the text you want the Auto Typer to type.
+      </p>
+
+      <textarea
+        id="textInput"
+        placeholder="Type or paste your text here..."
+      ></textarea>
+
+
+      <div class="buttons">
+
+        <button
+          type="button"
+          onclick="pasteText()"
+        >
+          📋 Paste Text
+        </button>
+
+
+        <button
+          type="button"
+          class="darkButton"
+          onclick="clearText()"
+        >
+          🗑️ Clear
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================= -->
+    <!-- SPEED -->
+    <!-- ========================= -->
+
+    <section class="card">
+
+      <h2>⚡ Typing Speed</h2>
+
+      <p>
+        Move the slider to change how quickly the Auto Typer types.
+      </p>
+
+      <div class="speedBox">
+
+        <input
+          type="range"
+          id="speedSlider"
+          min="5"
+          max="200"
+          value="50"
+          oninput="updateSpeed()"
+        >
+
+        <p>
+          Delay:
+          <strong id="speedDisplay">50</strong>
+          ms
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================= -->
+    <!-- CONTROLS -->
+    <!-- ========================= -->
+
+    <section class="card">
+
+      <h2>🎮 Controls</h2>
+
+      <div class="buttons">
+
+
+        <button
+          type="button"
+          class="start"
+          onclick="startTyping()"
+        >
+          ▶ Start
+        </button>
+
+
+        <button
+          type="button"
+          class="pause"
+          onclick="pauseTyping()"
+        >
+          ⏸ Pause
+        </button>
+
+
+        <button
+          type="button"
+          class="stop"
+          onclick="stopTyping()"
+        >
+          🛑 Stop
+        </button>
+
+
+        <button
+          type="button"
+          class="restart"
+          onclick="restartTyping()"
+        >
+          🔄 Restart
+        </button>
+
+
+        <button
+          type="button"
+          class="darkButton"
+          onclick="toggleDarkMode()"
+        >
+          🌙 Dark Mode
+        </button>
+
+      </div>
+
+
+      <div
+        class="status"
+        id="status"
+        aria-live="polite"
+      >
+        Ready
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================= -->
+    <!-- TYPING AREA -->
+    <!-- ========================= -->
+
+    <section class="card">
+
+      <h2>⌨️ Typing Area</h2>
+
+      <textarea
+        id="typingArea"
+        readonly
+        placeholder="Your text will appear here..."
+      ></textarea>
+
+    </section>
+
+
+
+    <!-- ========================= -->
+    <!-- STATISTICS -->
+    <!-- ========================= -->
+
+    <section class="card">
+
+      <h2>📊 Statistics</h2>
+
+
+      <div class="stats">
+
+
+        <div class="stat">
+
+          Characters
+
+          <strong id="characters">
+            0
+          </strong>
+
+        </div>
+
+
+        <div class="stat">
+
+          Words
+
+          <strong id="words">
+            0
+          </strong>
+
+        </div>
+
+
+        <div class="stat">
+
+          WPM
+
+          <strong id="wpm">
+            0
+          </strong>
+
+        </div>
+
+
+        <div class="stat">
+
+          Accuracy
+
+          <strong id="accuracy">
+            100%
+          </strong>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- ========================= -->
+  <!-- JAVASCRIPT -->
+  <!-- ========================= -->
+
+  <script src="game.js"></script>
+
+</body>
+
+</html>
+```
